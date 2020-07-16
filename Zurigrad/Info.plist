@@ -30,7 +30,24 @@
 	<string>NSApplication</string>
 	<key>NSSupportsAutomaticTermination</key>
 	<true/>
+	<key>LSUIElement</key>
+	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+    <key>NSAppTransportSecurity</key>
+      <dict>
+          <key>NSAllowsArbitraryLoads</key>
+          <true/>
+          <key>NSExceptionDomains</key>
+          <dict>
+              <key>yourdomain.com</key>
+              <dict>
+                  <key>NSIncludesSubdomains</key>
+                  <true/>
+                  <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                  <false/>
+              </dict>
+         </dict>
+    </dict>
 </dict>
 </plist>
