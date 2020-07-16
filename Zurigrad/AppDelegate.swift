@@ -11,15 +11,16 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-
+    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
             button.title = "Z°"
         }
+        
         constructMenu()
         
-        Timer.scheduledTimer(timeInterval: 3600, target: self, selector: #selector(updateTemp), userInfo: nil, repeats: true).fire()
+        Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(updateTemp), userInfo: nil, repeats: true).fire()//3600
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -28,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func updateIcon(temp: String) {
         if let button = self.statusItem.button {
-            button.title = String(temp.prefix(2) + "°")
+            button.title = String(temp.prefix(4) + "°")
         }
     }
     
@@ -41,18 +42,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
             DispatchQueue.main.async {
                 if let error = error {
-                     print("Error!")
-                     return
-                 }
-                 guard let response = response else {
-                     print("Empty Response!")
+                     print(error.localizedDescription)
+                     self.updateIcon(temp: "Z")
                      return
                  }
                  guard let data = data else {
                      print("Empty Data!")
+                     self.updateIcon(temp: "Z")
                      return
                  }
-                
+
                 let text = String(decoding: data, as: UTF8.self)
                 let temp = text.components(separatedBy: "\n")[1].components(separatedBy: ",")[1]
                 
