@@ -7,10 +7,12 @@
 //
 
 import Cocoa
+import SwiftUI
+import LaunchAtLogin
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -19,8 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         constructMenu()
-        
-        Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(updateTemp), userInfo: nil, repeats: true).fire()//3600
+        //600
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(updateTemp), userInfo: nil, repeats: true).fire()//3600
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -35,6 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func updateTemp (){
         
+        var lastTemp = "Z"
         let currTime = String(Int64((Date().timeIntervalSince1970 * 1000.0).rounded()))
         
         let url = URL(string: "http://meteolakes.ch/api/coordinates/683418/246684/zurich/temperature/" + currTime + "/" + currTime + "/0")!
@@ -43,17 +46,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DispatchQueue.main.async {
                 if let error = error {
                      print(error.localizedDescription)
-                     self.updateIcon(temp: "Z")
+                     self.updateIcon(temp: lastTemp)
                      return
                  }
                  guard let data = data else {
                      print("Empty Data!")
-                     self.updateIcon(temp: "Z")
+                     self.updateIcon(temp: lastTemp)
                      return
                  }
 
                 let text = String(decoding: data, as: UTF8.self)
                 let temp = text.components(separatedBy: "\n")[1].components(separatedBy: ",")[1]
+                lastTemp = temp
                 
                 self.updateIcon(temp: temp)
             }
@@ -62,6 +66,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func constructMenu() {
+      LaunchAtLogin.isEnabled = true
+        
       let menu = NSMenu()
 
       menu.addItem(NSMenuItem(title: "Quit Zürigrad", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
