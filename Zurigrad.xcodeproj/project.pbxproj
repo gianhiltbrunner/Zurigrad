@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		D21B3D4C24BF5440007F4379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B3D4B24BF5440007F4379 /* AppDelegate.swift */; };
 		D21B3D4E24BF5440007F4379 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B3D4D24BF5440007F4379 /* ViewController.swift */; };
-		D21B3D5024BF5443007F4379 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21B3D4F24BF5443007F4379 /* Assets.xcassets */; };
 		D21B3D5324BF5443007F4379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D21B3D5124BF5443007F4379 /* Main.storyboard */; };
-		D2C1C5A224C0D5E6006EB2CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C1C5A124C0D5E6006EB2CD /* Images.xcassets */; };
-		D2FC05182677862F003CB537 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D2FC05172677862F003CB537 /* LaunchAtLogin */; };
+		D2AECA2C2836336B00A21B74 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D2AECA2B2836336B00A21B74 /* LaunchAtLogin */; };
+		D2AECA322836355100A21B74 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = D2AECA312836355100A21B74 /* SwiftSoup */; };
+		D2AECA342836376F00A21B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2AECA332836376F00A21B74 /* Assets.xcassets */; };
+		D2AECA3928363D0100A21B74 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D2AECA3828363D0100A21B74 /* Alamofire */; };
+		D2AECA3E2836689A00A21B74 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = D2AECA3D2836689A00A21B74 /* locations.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D21B3D4824BF5440007F4379 /* Zurigrad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zurigrad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21B3D4B24BF5440007F4379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D21B3D4D24BF5440007F4379 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D21B3D4F24BF5443007F4379 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D21B3D5224BF5443007F4379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D21B3D5424BF5443007F4379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D21B3D5524BF5443007F4379 /* Zurigrad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zurigrad.entitlements; sourceTree = "<group>"; };
-		D2C1C5A124C0D5E6006EB2CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2AECA332836376F00A21B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2AECA3D2836689A00A21B74 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +33,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FC05182677862F003CB537 /* LaunchAtLogin in Frameworks */,
+				D2AECA3928363D0100A21B74 /* Alamofire in Frameworks */,
+				D2AECA2C2836336B00A21B74 /* LaunchAtLogin in Frameworks */,
+				D2AECA322836355100A21B74 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,13 +61,13 @@
 		D21B3D4A24BF5440007F4379 /* Zurigrad */ = {
 			isa = PBXGroup;
 			children = (
+				D2AECA332836376F00A21B74 /* Assets.xcassets */,
+				D2AECA3D2836689A00A21B74 /* locations.json */,
 				D21B3D4B24BF5440007F4379 /* AppDelegate.swift */,
 				D21B3D4D24BF5440007F4379 /* ViewController.swift */,
-				D21B3D4F24BF5443007F4379 /* Assets.xcassets */,
 				D21B3D5124BF5443007F4379 /* Main.storyboard */,
 				D21B3D5424BF5443007F4379 /* Info.plist */,
 				D21B3D5524BF5443007F4379 /* Zurigrad.entitlements */,
-				D2C1C5A124C0D5E6006EB2CD /* Images.xcassets */,
 			);
 			path = Zurigrad;
 			sourceTree = "<group>";
@@ -86,7 +90,9 @@
 			);
 			name = Zurigrad;
 			packageProductDependencies = (
-				D2FC05172677862F003CB537 /* LaunchAtLogin */,
+				D2AECA2B2836336B00A21B74 /* LaunchAtLogin */,
+				D2AECA312836355100A21B74 /* SwiftSoup */,
+				D2AECA3828363D0100A21B74 /* Alamofire */,
 			);
 			productName = Zurigrad;
 			productReference = D21B3D4824BF5440007F4379 /* Zurigrad.app */;
@@ -98,6 +104,9 @@
 		D21B3D4024BF5440007F4379 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Gian Hiltbrunner";
@@ -117,7 +126,9 @@
 			);
 			mainGroup = D21B3D3F24BF5440007F4379;
 			packageReferences = (
-				D2FC05162677862F003CB537 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				D2AECA2A2836336B00A21B74 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				D2AECA302836355100A21B74 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				D2AECA3728363D0100A21B74 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = D21B3D4924BF5440007F4379 /* Products */;
 			projectDirPath = "";
@@ -133,8 +144,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2C1C5A224C0D5E6006EB2CD /* Images.xcassets in Resources */,
-				D21B3D5024BF5443007F4379 /* Assets.xcassets in Resources */,
+				D2AECA342836376F00A21B74 /* Assets.xcassets in Resources */,
+				D2AECA3E2836689A00A21B74 /* locations.json in Resources */,
 				D21B3D5324BF5443007F4379 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,7 +254,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -298,6 +311,7 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -363,21 +377,47 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D2FC05162677862F003CB537 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+		D2AECA2A2836336B00A21B74 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
 			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		D2AECA302836355100A21B74 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D2AECA3728363D0100A21B74 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D2FC05172677862F003CB537 /* LaunchAtLogin */ = {
+		D2AECA2B2836336B00A21B74 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D2FC05162677862F003CB537 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			package = D2AECA2A2836336B00A21B74 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
 			productName = LaunchAtLogin;
+		};
+		D2AECA312836355100A21B74 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2AECA302836355100A21B74 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		D2AECA3828363D0100A21B74 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2AECA3728363D0100A21B74 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

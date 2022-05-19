@@ -1,0 +1,92 @@
+[
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/freibad_allenmoos.html",
+		"name": "Allenmoos",
+		"type": "Beckenbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/freibad_auhof.html",
+		"name": "Auhof",
+		"type": "Beckenbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/flussbad_au_hoengg.html",
+		"name": "Au-Höngg",
+		"type": "Flussbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/seebad_enge.html",
+		"name": "Enge",
+		"type": "Seebad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/freibad_heuried.html",
+		"name": "Heuried",
+		"type": "Beckenbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/seebad_katzensee.html",
+		"name": "Katzensee",
+		"type": "Seebad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/freibad_letzigraben.html",
+		"name": "Letzigraben",
+		"type": "Beckenbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/strandbad_mythenquai.html",
+		"name": "Mythenquai",
+		"type": "Strandbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/flussbad_oberer_letten.html",
+		"name": "Oberer Letten",
+		"type": "Flussbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/flussbad_schanzengraben.html",
+		"name": "Schanzengraben",
+		"type": "Flussbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/freibad_seebach.html",
+		"name": "Seebach",
+		"type": "Beckenbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/frauenbad_stadthausquai.html",
+		"name": "Stadthausquai",
+		"type": "Flussbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/strandbad_tiefenbrunnen.html",
+		"name": "Tiefenbrunnen",
+		"type": "Strandbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/flussbad_unterer_letten.html",
+		"name": "Unterer Letten",
+		"type": "Flussbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/seebad_utoquai.html",
+		"name": "Utoquai",
+		"type": "Seebad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/strandbad_wollishofen.html",
+		"name": "Wollishofen",
+		"type": "Strandbad"
+	},
+	{
+		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/freibad_zwischen_den_hoelzern.html",
+		"name": "Zwischen den Hölzern",
+		"type": "Beckenbad"
+	},
+    {
+        "URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmenbad_zwischen_den_hoelzern.html",
+        "name": "Corrupt",
+        "type": "Beckenbad"
+    }
+]
