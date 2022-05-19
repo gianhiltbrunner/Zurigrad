@@ -127,10 +127,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let locationDropdown = NSMenuItem(title: "Set Location", action: nil, keyEquivalent: "")
         menu.setSubmenu(location_menu, for: locationDropdown)
         
-        menu.addItem(NSMenuItem(title: "Quit Zürigrad", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         menu.addItem(locationDropdown)
-        
-        
+        menu.addItem(NSMenuItem(title: "Quit Zürigrad", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         statusItem.menu = menu
     }

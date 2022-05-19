@@ -83,10 +83,5 @@
 		"URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/freibad_zwischen_den_hoelzern.html",
 		"name": "Zwischen den Hölzern",
 		"type": "Beckenbad"
-	},
-    {
-        "URL": "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmenbad_zwischen_den_hoelzern.html",
-        "name": "Corrupt",
-        "type": "Beckenbad"
-    }
+	}
 ]
