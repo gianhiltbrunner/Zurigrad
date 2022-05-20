@@ -10,4 +10,6 @@ brew tap gianhiltbrunner/zurigrad
 brew install --cask zurigrad
 ```
 
-Start using ⌘ + Space and type **Zurigrad**.
+The first time you open **Zurigrad**.
+  * Open **Applications** in *Finder*
+  * Right click on **Zurigrad** -> **Open**.
