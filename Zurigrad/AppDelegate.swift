@@ -59,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         
-        Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(updateTemp), userInfo: nil, repeats: true).fire()
+        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updateTemp), userInfo: nil, repeats: true).fire()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
