@@ -19,8 +19,8 @@ struct Location: Decodable {
 }
 
 struct DefaultsKeys {
-    static let URL : String = "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/flussbad_unterer_letten.html"
-    static let name : String = "Unterer Letten"
+    static let URL : String = "url"
+    static let name : String = "name"
 }
 
 let menu = NSMenu()
@@ -33,7 +33,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let defaults = UserDefaults.standard
     lazy var currentLocationName : NSMenuItem = {
-        return NSMenuItem(title: defaults.string(forKey: DefaultsKeys.name)!, action: nil, keyEquivalent: "")
+        return NSMenuItem(
+            title: defaults.string(forKey: DefaultsKeys.name) ?? "Please choose location" ,
+            action: defaults.string(forKey: DefaultsKeys.URL) != nil ? #selector(showDetails(_:)) : nil,
+            keyEquivalent: ""
+        )
     }()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -62,9 +66,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
-    func updateIcon(temp: String) {
+    func updateIcon(display: String, temperature: Bool = true) {
         if let button = self.statusItem.button {
-            button.title = String(temp + "°")
+            button.title = String(display + (temperature ? "°" : "") )
+        }
+    }
+    
+    @objc func showDetails(_ sender: NSMenuItem) {
+        let locationsWebsite = defaults.string(forKey: DefaultsKeys.URL)
+        if locationsWebsite != nil {
+        // Open the website on the specifc location
+            NSWorkspace.shared.open(URL(string: locationsWebsite!)!)
         }
     }
     
@@ -75,12 +87,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.set(sender.identifier!.rawValue, forKey: DefaultsKeys.URL)
         defaults.set(sender.title, forKey: DefaultsKeys.name)
         
+        currentLocationName.action = #selector(showDetails(_:))
+        
         currentLocationName.title = sender.title
         
         updateTemp()
     }
     
     @objc func updateTemp (){
+        self.updateIcon(display: "↻", temperature: false)
         let defaults = UserDefaults.standard
         if let URL = defaults.string(forKey: DefaultsKeys.URL) {
             
@@ -92,20 +107,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         let doc: Document = try SwiftSoup.parse(value)
                         let linkText: String = try doc.getElementById("baederinfos_temperature_value")?.text().filter { "0"..."9" ~= $0 } ?? "Z"
                         
-                        self.updateIcon(temp: linkText)
+                        self.updateIcon(display: linkText)
                         
                     } catch Exception.Error(_, let message) {
                         print(message)
-                        self.updateIcon(temp: "Z°")
+                        self.updateIcon(display: "Z°", temperature: false)
                     } catch {
                         print("error")
-                        self.updateIcon(temp: "Z°")
+                        self.updateIcon(display: "Z°", temperature: false)
                     }
                 case .failure(let error):
                     print(error)
-                    self.updateIcon(temp: "Z°")
+                    self.updateIcon(display: "Z°", temperature: false)
                 }
             }
+        }
+        else {
+            self.updateIcon(display: "Z°", temperature: false)
         }
         
         
