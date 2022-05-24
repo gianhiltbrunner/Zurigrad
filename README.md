@@ -6,7 +6,7 @@ Zurigrad is a minimal MacOS status bar app, displaying the current water tempera
 ### Installation 
 
 ```
-brew tap gianhiltbrunner/zurigrad
+brew tap gianhiltbrunner/tap
 brew install --cask zurigrad
 ```
 
