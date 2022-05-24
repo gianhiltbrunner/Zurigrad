@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let defaults = UserDefaults.standard
     lazy var currentLocationName : NSMenuItem = {
-        return NSMenuItem(title: defaults.string(forKey: DefaultsKeys.name)!, action: nil, keyEquivalent: "")
+        return NSMenuItem(title: defaults.string(forKey: DefaultsKeys.name) ?? "Please choose location" , action: nil, keyEquivalent: "")
     }()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
