@@ -389,8 +389,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.2;
 			};
 		};
 		D2AECA3728363D0100A21B74 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
