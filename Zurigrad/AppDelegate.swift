@@ -59,16 +59,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         
-        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updateTemp), userInfo: nil, repeats: true).fire()
+        Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(updateTemp), userInfo: nil, repeats: true).fire()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
     
-    func updateIcon(temp: String) {
+    func updateIcon(display: String, temperature: Bool = true) {
         if let button = self.statusItem.button {
-            button.title = String(temp + "°")
+            button.title = String(display + (temperature ? "°" : "") )
         }
     }
     
@@ -95,6 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func updateTemp (){
+        self.updateIcon(display: "↻", temperature: false)
         let defaults = UserDefaults.standard
         if let URL = defaults.string(forKey: DefaultsKeys.URL) {
             
@@ -104,22 +105,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 case .success(let value):
                     do {
                         let doc: Document = try SwiftSoup.parse(value)
-                        let linkText: String = try doc.getElementById("baederinfos_temperature_value")?.text().filter { "0"..."9" ~= $0 } ?? "Z°"
+                        let linkText: String = try doc.getElementById("baederinfos_temperature_value")?.text().filter { "0"..."9" ~= $0 } ?? "Z"
                         
-                        self.updateIcon(temp: linkText)
+                        self.updateIcon(display: linkText)
                         
                     } catch Exception.Error(_, let message) {
                         print(message)
-                        self.updateIcon(temp: "Z°")
+                        self.updateIcon(display: "Z°", temperature: false)
                     } catch {
                         print("error")
-                        self.updateIcon(temp: "Z°")
+                        self.updateIcon(display: "Z°", temperature: false)
                     }
                 case .failure(let error):
                     print(error)
-                    self.updateIcon(temp: "Z°")
+                    self.updateIcon(display: "Z°", temperature: false)
                 }
             }
+        }
+        else {
+            self.updateIcon(display: "Z°", temperature: false)
         }
         
         
