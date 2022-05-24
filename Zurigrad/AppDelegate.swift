@@ -90,7 +90,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 case .success(let value):
                     do {
                         let doc: Document = try SwiftSoup.parse(value)
-                        let linkText: String = try doc.getElementById("baederinfos_temperature_value")?.text().filter { "0"..."9" ~= $0 } ?? "Z"
+                        let linkText: String = try doc.getElementById("baederinfos_temperature_value")?.text().filter { "0"..."9" ~= $0 } ?? "Z°"
                         
                         self.updateIcon(temp: linkText)
                         
