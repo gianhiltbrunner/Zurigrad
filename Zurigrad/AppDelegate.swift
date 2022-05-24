@@ -19,8 +19,8 @@ struct Location: Decodable {
 }
 
 struct DefaultsKeys {
-    static let URL : String = "https://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen/sommerbaeder/flussbad_unterer_letten.html"
-    static let name : String = "Unterer Letten"
+    static let URL : String = "url"
+    static let name : String = "name"
 }
 
 let menu = NSMenu()
