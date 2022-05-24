@@ -33,7 +33,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let defaults = UserDefaults.standard
     lazy var currentLocationName : NSMenuItem = {
-        return NSMenuItem(title: defaults.string(forKey: DefaultsKeys.name) ?? "Please choose location" , action: nil, keyEquivalent: "")
+        return NSMenuItem(
+            title: defaults.string(forKey: DefaultsKeys.name) ?? "Please choose location" ,
+            action: defaults.string(forKey: DefaultsKeys.URL) != nil ? #selector(showDetails(_:)) : nil,
+            keyEquivalent: ""
+        )
     }()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -68,12 +72,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc func showDetails(_ sender: NSMenuItem) {
+        let locationsWebsite = defaults.string(forKey: DefaultsKeys.URL)
+        if locationsWebsite != nil {
+        // Open the website on the specifc location
+            NSWorkspace.shared.open(URL(string: locationsWebsite!)!)
+        }
+    }
+    
     @objc func setLocation(_ sender: NSMenuItem) {
         
         let defaults = UserDefaults.standard
         
         defaults.set(sender.identifier!.rawValue, forKey: DefaultsKeys.URL)
         defaults.set(sender.title, forKey: DefaultsKeys.name)
+        
+        currentLocationName.action = #selector(showDetails(_:))
         
         currentLocationName.title = sender.title
         
